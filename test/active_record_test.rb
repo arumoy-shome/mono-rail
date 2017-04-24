@@ -5,13 +5,23 @@ require 'blog/app/models/application_record'
 require 'blog/app/models/post'
 
 class ActiveRecordTest < Minitest::Test
-  def test_find_with_id_returns_post_with_matching_id
+  def test_find_returns_post_with_matching_id
     Post.establish_connection(database: "#{ __dir__ }/blog/db/development.sqlite3")
 
     post = Post.find(1)
     assert_kind_of Post, post
     assert_equal 1, post.id
     assert_equal "Blueberry Muffins", post.title
+  end
+
+  def test_all_returns_all_posts
+    Post.establish_connection(database: "#{ __dir__ }/blog/db/development.sqlite3")
+
+    posts = Post.all
+    assert_kind_of Array, posts
+    assert_equal 2, posts.length
+    assert_equal 1, posts.first.id
+    assert_equal "Blueberry Muffins", posts.first.title
   end
 
   def test_establish_connection_creates_a_db_connection_and_returns_it
