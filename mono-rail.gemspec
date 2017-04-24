@@ -1,11 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'mono/rail/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "mono-rail"
-  spec.version       = Mono::Rail::VERSION
+  spec.version       = 0.1
   spec.authors       = ["Arumoy Shome"]
   spec.email         = ["arumoy.shome@gmail.com"]
 
