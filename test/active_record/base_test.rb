@@ -6,7 +6,7 @@ require 'blog/app/models/post'
 
 class ActiveRecordTest < Minitest::Test
   def setup
-    Post.establish_connection(database: "#{__dir__}/blog/db/development.sqlite3")
+    Post.establish_connection(database: "#{__dir__}/../blog/db/development.sqlite3")
   end
 
   def test_find_returns_post_with_matching_id
