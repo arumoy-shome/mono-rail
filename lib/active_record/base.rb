@@ -13,7 +13,11 @@ module ActiveRecord
     end
 
     def self.all
-      find_by_sql("SELECT * FROM #{table_name}")
+      Relation.new(self)
+    end
+
+    def self.where(condition)
+      all.where(condition)
     end
 
     def self.find_by_sql(query)
