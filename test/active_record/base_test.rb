@@ -24,7 +24,7 @@ class ActiveRecordTest < Minitest::Test
     assert_equal "Blueberry Muffins", posts.first.title
   end
 
-  def test_#initialize_with_valid_params_creates_object_with_params
+  def test_initialize_with_valid_params_creates_object_with_params
     post = Post.new(id: 1, title: "My first post")
 
     assert_equal 1, post.id
